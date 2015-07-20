@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">RemoteWebAPI</string>
+
+    <string name="pause">Pause Tracking</string>
+    <string name="resume">Begin Tracking</string>
+    <string name="stop_alarm">Stop Alarm</string>
+    <string name="get_distance">Get Distance</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="target_latitude">Target Latitude</string>
+    <string name="target_longitude">Target Longitude</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+</resources>
