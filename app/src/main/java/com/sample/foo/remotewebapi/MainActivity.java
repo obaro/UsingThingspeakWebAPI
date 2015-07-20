@@ -3,20 +3,14 @@ package com.sample.foo.remotewebapi;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.media.MediaPlayer;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
-import android.provider.Settings;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -25,7 +19,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -38,12 +31,15 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "RemoteWebAPI";
-    private static final String THINGSPEAK_CHANNEL_ID = "46465";
-    private static final String THINGSPEAK_API_KEY = "49V2EB2W3NPH38QB";
+    private static final String TAG = "UsingThingspeakAPI";
+    private static final String THINGSPEAK_CHANNEL_ID = "REPLACE_WITH_YOUR_CHANNEL_ID";
+    private static final String THINGSPEAK_API_KEY = "REPLACE_WITH_YOUR_API_KEY";
     private static final String THINGSPEAK_API_KEY_STRING = "api_key";
+
+    /* Be sure to use the correct fields for your own app*/
     private static final String THINGSPEAK_FIELD1 = "field1";
     private static final String THINGSPEAK_FIELD2 = "field2";
+
     private static final String THINGSPEAK_UPDATE_URL = "https://api.thingspeak.com/update?";
     private static final String THINGSPEAK_CHANNEL_URL = "https://api.thingspeak.com/channels/";
     private static final String THINGSPEAK_FEEDS_LAST = "/feeds/last?";
@@ -195,8 +191,8 @@ public class MainActivity extends AppCompatActivity {
         Location target;
 
         protected void onPreExecute() {
-            double latitude = new Double(latitudeEdit.getText().toString()).doubleValue();
-            double longitude = new Double(longitudeEdit.getText().toString()).doubleValue();
+            double latitude = Double.parseDouble(latitudeEdit.getText().toString());
+            double longitude = Double.parseDouble(longitudeEdit.getText().toString());
             target = new Location("");
             target.setLatitude(latitude);
             target.setLongitude(longitude);
